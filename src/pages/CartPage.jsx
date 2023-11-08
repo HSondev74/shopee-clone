@@ -2,7 +2,7 @@ import React from "react";
 import "../App.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { shopping_cart } from "../images";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatPrice } from "../utils/helpers";
 import {
      getAllCarts,
@@ -14,8 +14,11 @@ import {
 const CartPage = () => {
      const dispatch = useDispatch();
      const carts = useSelector(getAllCarts);
+     const nav = useNavigate();
      const { itemsCount, totalAmount } = useSelector((state) => state.cart);
-
+     const goToCheckout = () => {
+          nav("/checkout");
+     };
      if (carts.length === 0) {
           return (
                <div className="container my-5">
@@ -191,6 +194,7 @@ const CartPage = () => {
                                    <button
                                         type="button"
                                         className="checkout-btn text-white bg-orange fs-16"
+                                        onClick={goToCheckout}
                                    >
                                         Check Out
                                    </button>

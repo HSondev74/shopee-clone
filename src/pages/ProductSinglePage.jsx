@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
      fetchAsyncProductSingle,
@@ -21,6 +21,7 @@ import CartMessage from "../components/CartMessage";
 const ProductSinglePage = () => {
      const { id } = useParams();
      const dispatch = useDispatch();
+     const nav = useNavigate();
      const product = useSelector(getProductSingle);
      const productSingleStatus = useSelector(getSingleProductStatus);
      const [quantity, setQuantity] = useState(1);
@@ -74,6 +75,23 @@ const ProductSinglePage = () => {
                })
           );
           dispatch(setCartMessageOn(true));
+     };
+
+     const goToCartHandler = (product) => {
+          let discountedPrice =
+               product?.price -
+               product?.price * (product?.discountPercentage / 100);
+          let totalPrice = quantity * discountedPrice;
+
+          dispatch(
+               addToCart({
+                    ...product,
+                    quantity: quantity,
+                    totalPrice,
+                    discountedPrice,
+               })
+          );
+          nav("/cart");
      };
 
      return (
@@ -286,6 +304,9 @@ const ProductSinglePage = () => {
                                              <button
                                                   type="button"
                                                   className="buy-now btn mx-3"
+                                                  onClick={() => {
+                                                       goToCartHandler(product);
+                                                  }}
                                              >
                                                   <span className="btn-text">
                                                        buy now

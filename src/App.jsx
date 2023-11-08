@@ -12,6 +12,8 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import Login from "./pages/Login";
+import CheckOut from "./pages/checkout/CheckOut";
 
 function App() {
      return (
@@ -23,6 +25,7 @@ function App() {
 
                          <Routes>
                               <Route path="/" element={<Home />} />
+                              <Route path="/login" element={<Login />} />
                               <Route
                                    path="/product/:id"
                                    element={<ProductSingle />}
@@ -36,6 +39,7 @@ function App() {
                                    path="/search/:searchTerm"
                                    element={<Search />}
                               />
+                              <Route path="/checkout" element={<CheckOut />} />
                          </Routes>
 
                          <Footer />

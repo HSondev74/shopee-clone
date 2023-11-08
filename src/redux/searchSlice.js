@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
 
@@ -35,7 +34,10 @@ const searchSlice = createSlice({
 export const fetchAsyncSearchProduct = createAsyncThunk(
      "product-search/fetch",
      async (searchTerm) => {
-          const res = await axios.get(`/products/search?q=${searchTerm}`);
+          const res = await fetch(
+               `https://dummyjson.com/products/search?q=${searchTerm}`
+          ).then((res) => res.json());
+
           return res.products;
      }
 );

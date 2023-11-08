@@ -1,0 +1,177 @@
+.wrapper {
+     display: flex;
+     flex-direction: column;
+     margin: 0 var(--margin-responsive);
+ }
+ 
+ .form {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 35%;
+     padding-top: 72px;
+     padding-bottom: 80px;
+     margin: 0 auto;
+ }
+ 
+ .form-title {
+     color: #252525;
+     font-size: 36px;
+     font-weight: 700;
+     text-align: center;
+     margin-bottom: 35px;
+ }
+ 
+ .form-group {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 25px;
+ }
+ 
+ .form-group-option {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 25px;
+ }
+ 
+ .gi-more {
+     width: 100%;
+ }
+ 
+ .form-label {
+     display: block;
+     font-size: 18px;
+     color: #252525;
+     margin-bottom: 13px;
+ }
+ 
+ .form-control {
+     border: 1px solid #ebebeb;
+     height: 50px;
+     width: 100%;
+     padding-left: 20px;
+     padding-right: 15px;
+ }
+ 
+ .error-message {
+     color: red;
+ }
+ 
+ .save-pass {
+     position: relative;
+     padding-left: 28px;
+     font-size: 14px;
+     color: #6b6b6b;
+     float: left;
+     cursor: pointer;
+ 
+     input {
+         position: absolute;
+         visibility: hidden;
+     }
+ 
+     input:checked ~ span {
+         &::after {
+             border-color: #6c6c6c;
+         }
+     }
+ }
+ 
+ .checkmark {
+     position: absolute;
+     left: 0;
+     top: 4px;
+     height: 13px;
+     width: 13px;
+     border: 1px solid #6c6c6c;
+     border-radius: 2px;
+ 
+     &::after {
+         position: absolute;
+         content: '';
+         left: 0;
+         top: -4px;
+         width: 13px;
+         height: 6px;
+         border: solid #ffffff;
+         border-width: 2px 2px 0px 0px;
+         -webkit-transform: rotate(127deg);
+         -ms-transform: rotate(127deg);
+         transform: rotate(127deg);
+     }
+ }
+ 
+ .forget-pass {
+     float: right;
+     line-height: 20px;
+     font-size: 14px;
+     color: #6b6b6b;
+ }
+ 
+ .submit {
+     width: 100%;
+     font-size: 14px;
+     font-weight: 700;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: #ffffff;
+     background: #F94E30;
+     border: 1px solid #F94E30;
+     padding: 13px 45px 11px;
+     margin-top: 5px;
+     cursor: pointer;
+ }
+ 
+ .switch {
+     text-align: center;
+     margin-top: 22px;
+ }
+ 
+ .switch-login {
+     color: #252525;
+     font-size: 14px;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     position: relative;
+ 
+     &::before {
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         height: 2px;
+         width: 100%;
+         background: #9f9f9f;
+         content: '';
+     }
+ }
+ 
+ @media only screen and (max-width: 1200px) {
+     .form {
+         padding-top: 50px;
+         width: 35%;
+     }
+ }
+ 
+ @media only screen and (max-width: 1000px) {
+     .form {
+         width: 60%;
+     }
+ }
+ 
+ @media only screen and (max-width: 560px) {
+     .form {
+         padding-top: 30px;
+         width: 100%;
+     }
+ 
+     .form-title {
+         margin-bottom: 20px;
+     }
+ 
+     .form-label {
+         font-size: 16px;
+     }
+ }
+ 

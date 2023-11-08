@@ -16,11 +16,11 @@ const Footer = () => {
                          </Link>
                          <div className="vert-line"></div>
                          <Link to="/" className="text-uppercase">
-                              About SnapUp.
+                              About Shoppe.
                          </Link>
                     </div>
                     <span className="text-white copyright-text text-manrope fs-14 fw-3">
-                         &copy; 2022 SnapUp. All Rights Reserved.
+                         &copy; 2023 Shoppe. All Rights Reserved.
                     </span>
                </div>
           </footer>

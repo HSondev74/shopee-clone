@@ -16,6 +16,7 @@ const Navbar = () => {
      const categories = useSelector(getAllCategories);
      const carts = useSelector(getAllCarts);
      const itemsCount = useSelector(getCartItemsCount);
+     console.log(carts.length);
      const [searchTerm, setSearchTerm] = useState("");
 
      const handleSearchTerm = (e) => {
@@ -46,7 +47,7 @@ const Navbar = () => {
                                    <i className="fa-solid fa-bag-shopping"></i>
                               </span>
                               <span className="navbar-brand-txt mx-2">
-                                   <span className="fw-7">Snap</span>Up.
+                                   <span className="fw-7">Shoppe</span>
                               </span>
                          </Link>
                     </div>
